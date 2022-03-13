@@ -1,0 +1,75 @@
+{
+	"monsters": [
+		{
+			"name": "",
+			"weakestTo": "",
+			"effectiveness": [
+				{
+					"head": {
+						"cutting": 50,
+						"impact": 50,
+						"bullet": 50,
+						"fire": 20,
+						"water": 5,
+						"thunder": 10,
+						"ice": 15,
+						"dragon": 0,
+						"stun": 100
+					}
+				},
+				{
+					"bust": {
+						"cutting": 30,
+						"impact": 30,
+						"bullet": 55,
+						"fire": 25,
+						"water": 5,
+						"thunder": 10,
+						"ice": 15,
+						"dragon": 0,
+						"stun": 0
+					}
+				},
+				{
+					"foreleg": {
+						"cutting": 22,
+						"impact": 22,
+						"bullet": 28,
+						"fire": 25,
+						"water": 5,
+						"thunder": 25,
+						"ice": 20,
+						"dragon": 0,
+						"stun": 0
+					}
+				},
+				{
+					"stomach": {
+						"cutting": 55,
+						"impact": 55,
+						"bullet": 38,
+						"fire": 15,
+						"water": 5,
+						"thunder": 10,
+						"ice": 15,
+						"dragon": 0,
+						"stun": 0
+					}
+				},
+				{
+					"hip": {
+						"cutting": 45,
+						"impact": 45,
+						"bullet": 35,
+						"fire": 15,
+						"water": 5,
+						"thunder": 10,
+						"ice": 15,
+						"dragon": 0,
+						"stun": 0
+					}
+				}
+			]
+		}
+	]
+}
