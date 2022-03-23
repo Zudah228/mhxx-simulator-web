@@ -1,6 +1,7 @@
 {
 	"monsters": [
 		{
+			"id": 0,
 			"name": "",
 			"weakestTo": "",
 			"effectiveness": [

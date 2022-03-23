@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { createForm, getValue } from 'felte';
-	import { ElementList, elementName } from '@domain/constants/Elements';
 	// TODO: バリデーション
 	import { validator } from '@felte/validator-yup';
 	import * as yup from 'yup';
 	import { DamageHelper } from '@domain/use_cases';
+	import { ElementList, elementName } from '@domain/constants/Elements';
 	import {
 		sharpnessElementCorrection,
 		SharpnessList,
@@ -29,6 +29,9 @@
 			return value.length === 0 || parseInt(value) !== undefined;
 		}),
 		sharpness: yup.string().test('', '', (value) => {
+			return value.length === 0 || parseInt(value) !== undefined;
+		}),
+		element: yup.string().test('', '', (value) => {
 			return value.length === 0 || parseInt(value) !== undefined;
 		}),
 		elementValue: yup.string().test('', '', (value) => {
@@ -63,7 +66,7 @@
 		false
 	).toString();
 	$: expectedElementValue =
-		Helper.parseNumber(elementValue) * sharpnessElementCorrection(sharpness).toString();
+		(Helper.parseNumber(elementValue) * sharpnessElementCorrection(sharpness)).toString();
 	// $: console.log(validatorSchema.validateSync("attack"));
 </script>
 
@@ -71,14 +74,6 @@
 	<h1 class="text-primary text-2xl font-bold mb-8">MHXX 期待値計算シミュレータ</h1>
 
 	<form use:form class={FORMS_Y_SPACE}>
-		<div class={FORM_Y_SPACE}>
-			<p>武器種</p>
-			<select name="weaponType" size="1">
-				{#each WeaponTypeList as value}
-					<option {value}>{weaponTypeProperty(value).name}</option>
-				{/each}
-			</select>
-		</div>
 		<div class={FORM_Y_SPACE}>
 			<p>攻撃力</p>
 			<select name="sharpness" size="1">
@@ -103,6 +98,14 @@
 				{/each}
 			</select>
 			<input type="number " name="elementValue" />
+		</div>
+		<div class={FORM_Y_SPACE}>
+			<p>武器種</p>
+			<select name="weaponType" size="1">
+				{#each WeaponTypeList as value}
+					<option {value}>{weaponTypeProperty(value).name}</option>
+				{/each}
+			</select>
 		</div>
 	</form>
 	<div class="">

@@ -13,6 +13,7 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
+					'~': path.resolve('./src'),
 					'@domain': path.resolve('./src/domain'),
 					'@components': path.resolve('./src/components'),
 					'@store': path.resolve('./src/store'),

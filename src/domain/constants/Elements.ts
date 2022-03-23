@@ -11,7 +11,7 @@ export const ELEMENT = {
 	blastblight: 'blastblight'
 } as const;
 
-export type Element = typeof ELEMENT[keyof typeof ELEMENT];
+export type ElementType = typeof ELEMENT[keyof typeof ELEMENT];
 
 export function elementName(value: Element | string): string {
 	switch (value) {
